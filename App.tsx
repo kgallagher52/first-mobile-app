@@ -1,15 +1,18 @@
+import React, { useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Button, StyleSheet, Text, View } from 'react-native';
 
-export default function App() {
+const App = () => {
+  const [outPutText, setOutPutText] = useState<string>('My First App');
   return (
     <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
+      <Text>{outPutText}</Text>
       <StatusBar style="auto" />
+      <Button title="Change Text" onPress={() => setOutPutText('You changed the text!')} />
     </View>
   );
 }
+export default App
 
 const styles = StyleSheet.create({
   container: {
